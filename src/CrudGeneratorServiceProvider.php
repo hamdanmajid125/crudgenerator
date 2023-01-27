@@ -1,6 +1,6 @@
 <?php
 
-namespace Appzcoder\CrudGenerator;
+namespace Hamdan\CrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -31,6 +31,11 @@ class CrudGeneratorServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/stubs/' => base_path('resources/crud-generator/'),
         ]);
+
+        /** Code By HAMDAN */
+
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
     }
 
     /**
@@ -41,14 +46,14 @@ class CrudGeneratorServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands(
-            'Appzcoder\CrudGenerator\Commands\CrudCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudControllerCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudModelCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudMigrationCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudViewCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudLangCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudApiCommand',
-            'Appzcoder\CrudGenerator\Commands\CrudApiControllerCommand'
+            'Hamdan\CrudGenerator\Commands\CrudCommand',
+            'Hamdan\CrudGenerator\Commands\CrudControllerCommand',
+            'Hamdan\CrudGenerator\Commands\CrudModelCommand',
+            'Hamdan\CrudGenerator\Commands\CrudMigrationCommand',
+            'Hamdan\CrudGenerator\Commands\CrudViewCommand',
+            'Hamdan\CrudGenerator\Commands\CrudLangCommand',
+            'Hamdan\CrudGenerator\Commands\CrudApiCommand',
+            'Hamdan\CrudGenerator\Commands\CrudApiControllerCommand'
         );
     }
 }
