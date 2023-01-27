@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Appzcoder\\CrudGenerator\\": "src/"
+            "Hamdan\\CrudGenerator\\": "src/"
         },
         "classmap": [
             "tests"
