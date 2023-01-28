@@ -2,6 +2,7 @@
 
 namespace Hamdan\CrudGenerator;
 
+use File;
 use Illuminate\Support\ServiceProvider;
 
 class CrudGeneratorServiceProvider extends ServiceProvider
@@ -25,17 +26,17 @@ class CrudGeneratorServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/views/' => base_path('resources/views/'),
-        ]);
-
-        $this->publishes([
             __DIR__ . '/stubs/' => base_path('resources/crud-generator/'),
         ]);
 
         /** Code By HAMDAN */
 
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-
+        if (File::exists(base_path('resources/laravel-admin/menus.json'))) {
+            $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
+            view()->share('laravelAdminMenus', $menus);
+         /** Code By HAMDAN */
+        }
     }
 
     /**
@@ -57,5 +58,6 @@ class CrudGeneratorServiceProvider extends ServiceProvider
             'Hamdan\CrudGenerator\Commands\CrudApiCommand',
             'Hamdan\CrudGenerator\Commands\CrudApiControllerCommand'
         );
+        
     }
 }
