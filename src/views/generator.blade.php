@@ -62,7 +62,7 @@
                                 <label for="form_helper" class="col-md-4 col-form-label text-right">Form Helper</label>
                                 <div class="col-md-6">
                                     <input type="text" name="form_helper" class="form-control" id="form_helper"
-                                        placeholder="laravelcollective" value="laravelcollective">
+                                        placeholder="html" value="html">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -104,6 +104,7 @@
                                         <option value="mediumint">mediumint</option>
                                         <option value="tinyint">tinyint</option>
                                         <option value="smallint">smallint</option>
+                                        <option value="image">image</option>
                                         <option value="boolean">boolean</option>
                                         <option value="decimal">decimal</option>
                                         <option value="double">double</option>
@@ -138,7 +139,7 @@
     </div>
 @endsection
 
-@section('scripts')
+@push('js')
     <script type="text/javascript">
         $(document).ready(function() {
             $(document).on('click', '.btn-add', function(e) {
