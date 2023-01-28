@@ -1,6 +1,6 @@
 <?php
 
-namespace Hamdan\Controllers;
+namespace Hamdan\CrudGenerator\Controllers;
 
 use App\Http\Controllers\Controller;
 use Artisan;

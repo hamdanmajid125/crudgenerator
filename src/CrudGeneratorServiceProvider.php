@@ -42,9 +42,11 @@ class CrudGeneratorServiceProvider extends ServiceProvider
      * Register the service provider.
      *
      * @return void
-     */
+     */ 
     public function register()
     {
+        $this->app->make('Hamdan\CrudGenerator\Controllers\ProcessController');
+        $this->loadViewsFrom(__DIR__ . '/views','hamdan');
         $this->commands(
             'Hamdan\CrudGenerator\Commands\CrudCommand',
             'Hamdan\CrudGenerator\Commands\CrudControllerCommand',

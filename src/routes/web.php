@@ -1,6 +1,4 @@
 <?php
 /** Code By HAMDAN */
-use Hamdan\Controllers\ProcessController;
-
-Route::get('/admin/dashboard', [ProcessController::class,'getGenerator'])->name('generator');
-Route::post('process', [ProcessController::class,'postGenerator'])->name('postGenerator');
+Route::get('/admin/dashboard', [Hamdan\CrudGenerator\Controllers\ProcessController::class,'getGenerator'])->name('generator');
+Route::post('process', [Hamdan\CrudGenerator\Controllers\ProcessController::class,'postGenerator'])->name('postGenerator');
