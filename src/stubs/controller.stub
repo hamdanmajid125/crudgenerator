@@ -96,7 +96,7 @@ class DummyClass extends Controller
         }
         {{modelName}}::create($data);
 
-        return redirect('admin/{{routeGroup}}{{viewName}}')->with('success', '{{modelName}} added!');
+        return response()->json(['status'=>true,'message' => 'Data Successfully Updated']);
     }
 
     /**
@@ -149,7 +149,7 @@ class DummyClass extends Controller
             $data['image'] = 'uploads/{{crudNameSingular}}/'.$fileName;
         }
         ${{crudNameSingular}}->update($data);
-        return redirect()->back()->with('success', '{{modelName}} Updated');
+       return response()->json(['status'=>true,'message' => 'Data Successfully Updated']);
 
 
     }
